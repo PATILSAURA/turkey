@@ -1,0 +1,272 @@
+html{
+    box-sizing: border-box;
+    --black: black;
+    --cream: #f2eee3;
+    --red: #d91729; 
+}
+html *,
+html *::before,
+html *::after{
+    box-sizing: inherit;
+}
+*::before,
+*::after{
+    content: "";
+    position: absolute;
+}
+*{
+    flex-shrink: 0;
+}
+body{
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: var(--cream);
+    overflow: hidden;
+   
+}
+.bird{
+    width: 34em;
+    height: 30em;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    position: relative;
+    transform: scale(.8);
+    margin-top: 10em;
+}
+@media screen and (max-width: 40em){
+  .bird{
+    transform: scale(.55);
+  }
+}
+.head{
+    width: 5.7em;
+    height: 13em;
+    position: absolute;
+    z-index: -1;
+    right: -2.85em;
+    bottom: 5em;
+    border-radius: 100px;
+    background-image: radial-gradient(circle at center 0% ,var(--cream) 45%, transparent 48%), linear-gradient( transparent 24% , var(--red) 0), radial-gradient(circle 8.5px at 75% 18% , var(--black) 79% , transparent 100%);
+    background-size: 50% 20% , 100% 100% , 100% 100%;
+    background-position: 98% 29% , 0 0 , 0 0;
+    background-repeat: no-repeat;
+}
+.head::after{
+    width: 4em;
+    height: 4em;
+    top: 14%;
+    left: 98.5%;
+    background-image: radial-gradient( 18px 15px at 40% 100% , var(--black) 41% , var(--cream) 44%), linear-gradient(45deg ,var(--black) 34% , transparent 35.5%);
+    background-size: 10px 12px ,80% 50%;
+    background-repeat: no-repeat;
+    background-position: left top -11%, left top -33.5%;
+    border-radius: 5px;
+}
+.body{
+    position: relative;
+    width: 20em;
+    height: 20em;
+    border-radius: 50%;
+
+    background-image: 
+    repeating-radial-gradient(circle 115px at right bottom, var(--black) 0,  var(--black) 5% , var(--cream) 6.5% , var(--cream) 7.5% , var(--black) 8.5% ),
+    repeating-radial-gradient(circle 260px at center top,    var(--cream) 0, var(--cream) 7.5% , var(--black) 8% , var(--black) 15% , var(--cream) 15.5% ),
+    radial-gradient(circle 55px  at center bottom, var(--black) 0,   var(--black) 17% , var(--cream) 18% , var(--cream) 27%  , transparent 28% ),
+    radial-gradient(circle 55px  at center bottom, var(--black) 0,   var(--black) 17% , var(--cream) 18% , var(--cream) 27%  , black 28% );
+
+    background-size: 50% 50% ,  100% 50% , 12.6% 13% ,  12.6% 13% ;
+    background-repeat: no-repeat , no-repeat , repeat, repeat ; 
+    background-position: left top , center bottom,  right 9% top 5.25% , right 1.6% top 27.6% ;
+}
+.body::before,
+.body::after {
+    top: 95%;
+    width: 1.7em;
+    height: 3em;
+    right: 0;
+    margin: 0 auto;
+    border: 1.5px solid var(--black);
+    border-color: transparent transparent var(--black) var(--black);
+    z-index: -1;
+}
+.body::before{
+    left: -17%;
+    border-bottom-left-radius: 25px;
+}
+.body::after {
+    left: 17%;
+}
+.wing{
+    width: 100%;
+    height: 50%;
+    right: 50%;
+    bottom: 0;
+    position: absolute;
+    border-radius: 50% / 0 0 100% 100% ;
+    background-image: repeating-linear-gradient( var(--black) 0 ,var(--black) 8% ,  var(--cream) 9% , var(--cream) 11%),
+    radial-gradient(circle 80px at 100% center , var(--black) 26% , var(--cream) 27%);
+    background-size: 50% 125% , 9% 26.5%;
+    background-position: left bottom;
+    background-repeat: no-repeat , repeat;
+    border: 2px solid var(--black);
+    background-position: left top 20% , right -3% top;
+}
+.dams{
+    width: 24em;
+    height: 25em;
+    position: absolute;
+    bottom: 61%;
+    right: 31%;
+    display: flex;
+    z-index: -1;
+    
+}
+.dam{
+    position: absolute;
+    width: 6.5em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+   
+}
+.dam::before{
+    width: 22em;
+    height: 27em;
+    border-radius: 50%;
+}
+.dam-1{
+    top: -2%;
+    left: 75%;
+}
+.dam-1::before{
+    background-image: 
+    radial-gradient(circle 14px , var(--cream) 30% , transparent 40%),
+    radial-gradient(circle 14px , var(--cream) 30% , transparent 40%),
+    radial-gradient(circle 14px , var(--cream) 30% , transparent 40%),
+    radial-gradient(circle 14px , var(--cream) 30% , transparent 40%),
+    radial-gradient(circle 14px , var(--cream) 30% , transparent 40%),
+    radial-gradient(circle 14px , var(--cream) 30% , transparent 40%),
+    radial-gradient(circle 14px , var(--cream) 30% , transparent 40%),
+    radial-gradient(circle 14px , var(--cream) 30% , transparent 40%),
+    radial-gradient(circle 14px , var(--cream) 30% , transparent 40%),
+    repeating-linear-gradient(var(--black) 0 , var(--black) 5px , var(--cream) 6px , var(--cream) 7px , var(--black) 8px , var(--black) 20px);
+    background-size: var(--c-size),var(--c-size),var(--c-size),
+    var(--c-size),var(--c-size),var(--c-size),
+    var(--c-size),var(--c-size),var(--c-size),100% 100%;
+    background-repeat: no-repeat;
+    background-position: 21% 3.8% , 12% 14.5% , 19% 20% ,6% 31% , 18% 42% , 14.5% 52.7% ,  20.5% 63.7%,  18.5% 74.5%, 0 0;
+    --c-size: 15% 15%;
+
+}
+.dam-2{
+    transform: rotate(-18deg);
+    top: 3%;
+    left: 59%;
+}
+.dam-2::before{
+    background-image: radial-gradient(circle 20px ,var(--cream) 30% , transparent 37%), radial-gradient(circle 20px ,var(--cream) 30% , var(--black) 37%);
+    background-size: 11% 5.5%;
+    background-position: 1% 24% ,7% 21%;
+}
+.dam-3{
+    transform: rotate(-32deg);
+    top: 11%;
+    left: 42%;
+}
+.dam-3::before{
+    background-image: repeating-linear-gradient( -106deg,  var(--black) 0 , var(--black) 1px ,var(--cream) 2px , var(--cream) 8px , var(--black) 9px , var(--black) 18px);
+    background-size: 100% 120%;
+    background-position: left top 30%;
+}
+.dam-4{
+    transform: rotate(-48deg);
+    top: 22%;
+    left: 26%;
+}
+.dam-4::before{
+    background-image: repeating-radial-gradient(circle at 17% 43% , var(--black) 0%, var(--black) 5.2% , var(--cream) 5.7% , var(--cream) 5.9% , var(--black) 6.2%);
+}
+.dam-5{
+    transform: rotate(-61deg);
+    top: 39%;
+    left: 17%;
+}
+
+.dam-5::before{
+    background-image:
+    linear-gradient(45deg , var(--black) 25% , transparent 0),
+    linear-gradient(45deg , var(--cream) 25% , transparent 0),
+    linear-gradient(45deg , var(--black) 25% , transparent 0),
+    linear-gradient(45deg , var(--cream) 25% , transparent 0),
+    linear-gradient(45deg , var(--black) 25% , transparent 0),
+    linear-gradient(45deg , var(--cream) 25% , transparent 0),
+    linear-gradient(45deg , var(--black) 25% , transparent 0),
+    linear-gradient(45deg , var(--cream) 25% , transparent 0), 
+    linear-gradient(45deg , var(--black) 25% , transparent 0),
+    linear-gradient(45deg , var(--cream) 25% , transparent 0),
+    linear-gradient(45deg , var(--black) 25% , transparent 0),
+    linear-gradient(45deg , var(--cream) 25% , transparent 0),
+
+    linear-gradient(45deg , var(--black) 25% , transparent 0),
+    linear-gradient(45deg , var(--cream) 25% , transparent 0),
+    linear-gradient(45deg , var(--black) 25% , transparent 0),
+    linear-gradient(45deg , var(--cream) 25% , transparent 0),
+    linear-gradient(45deg , var(--black) 25% , transparent 0),
+    linear-gradient(45deg , var(--cream) 25% , transparent 0),
+
+    linear-gradient(45deg , var(--black) 25% , transparent 0),
+    linear-gradient(45deg , var(--cream) 25% , transparent 0),
+    linear-gradient(45deg , var(--black) 25% , transparent 0),
+    linear-gradient(45deg , var(--cream) 25% , transparent 0),
+    linear-gradient(45deg , var(--black) 25% , transparent 0), 
+    linear-gradient(45deg , var(--cream) 25% , transparent 0),
+    linear-gradient(45deg , var(--black) 25% , transparent 0), 
+    linear-gradient(45deg , var(--cream) 25% , transparent 0),
+    linear-gradient(45deg , var(--black) 25% , transparent 0),
+    linear-gradient(45deg , var(--cream) 25% , transparent 0);
+    background-size: 440px 440px;
+    background-position:
+    349% -55% , 343% -49% ,
+    318% -24%, 312% -18% ,
+    287% 7% , 281% 13% ,
+    256% 38% , 250% 272%,
+    225% 276% ,219% 303%,
+    194% 307% , 188% 333%,
+
+    -352% -280% , -346% -274%, 
+    -311% -249% , -320% -243%, 
+    -328% -218% , -352% -212%,
+
+    165% -185% , 159% -178% ,
+    134% -153% , 128%  -147%,
+    103% -122% , 97%  -116%,
+    72% -91% , 66%  -85%,
+    41% -60% , 35%  -54%;
+
+    width: 31em;
+    height: 31em;
+    transform: rotate(61deg);
+    background-color: var(--black);
+    background-repeat: no-repeat;
+}
+
+.dam-6{
+    transform: rotate(-76deg);
+    top: 56%;
+    left: 10%;
+}
+.dam-6::before{
+    background-image: radial-gradient(circle 30px , var(--black) 25% , var(--cream) 28% , var(--cream) 45% , transparent 47%), 
+    radial-gradient(circle 36px , var(--black) 25% , var(--cream) 28% , var(--cream) 32% , var(--black) 34%);
+    background-size: 14% 10%;
+    position: absolute;
+    background-position: left 6% top 32%, left 14% top 38%;
+    border-radius: 50%;
+    width: 27em;
+    transform: rotate(76deg);
+}
